@@ -1,23 +1,42 @@
-library(shiny)
-library(ggplot2)
+#
+# This is a Shiny web application. You can run the application by clicking
+# the 'Run App' button above.
+#
+# Find out more about building applications with Shiny here:
+#
+#    http://shiny.rstudio.com/
+#
 
-datasets <- c("economics", "faithfuld", "seals")
+library(shiny)
+library(tidyverse)
+library(cfbfastR)
+
+lsu2020 <- cfbd_stats_season_advanced(2020, team = "LSU")
+lsu2020player <- cfbd_stats_season_player(2020, team = "LSU")
+
+# Define UI for application that prints a table of a dataset
 ui <- fluidPage(
-  selectInput("dataset", "Dataset", choices = datasets),
-  verbatimTextOutput("summary"),
-  plotOutput("plot")
+    selectInput("dataset", label = "Dataset", choices = ls()),
+    tableOutput("table")
 )
 
+# Define server logic required to print a dataset
 server <- function(input, output, session) {
-  dataset <- reactive({
-    get(input$dataset, "package:ggplot2")
-  })
-  output$summary <- renderPrint({
-    summary(dataset())
-  })
-  output$plot <- renderPlot({
-    plot(dataset())
-  }, res = 96)
+    
+    # Create a reactive expression
+    dataset <- reactive({
+        get(input$dataset)
+    })
+    
+    output$table <- renderPrint({
+        #Use a reactive expression by calling it like a function
+        glimpse(dataset())
+    })
+    
+    output$table <- renderTable({
+        dataset()
+    })
 }
 
-shinyApp(ui, server)
+# Run the application 
+shinyApp(ui = ui, server = server)
