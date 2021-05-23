@@ -5,10 +5,10 @@ account: bateyt
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 4173263
-bundleId: 4631102
+bundleId: 4631133
 url: https://bateyt.shinyapps.io/phlstats/
-when: 1621807744.54581
-lastSyncTime: 1621807744.54584
+when: 1621808310.54676
+lastSyncTime: 1621808310.54679
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: .Rprofile|LICENSE|README.md|testapps/app.R

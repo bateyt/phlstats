@@ -17,6 +17,8 @@ lsu2020player <- cfbd_stats_season_player(2020, team = "LSU")
 
 # Define UI for application that prints a table of a dataset
 ui <- fluidPage(
+    titlePanel("LSU Football Statistics"),
+    p("Choose an LSU dataset from the drop-down menu below."),
     selectInput("dataset", label = "Dataset", choices = ls()),
     tableOutput("table")
 )
