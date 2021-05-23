@@ -1,0 +1,14 @@
+name: phlstats
+title: phlstats
+username:
+account: bateyt
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 4173263
+bundleId: 4631102
+url: https://bateyt.shinyapps.io/phlstats/
+when: 1621807744.54581
+lastSyncTime: 1621807744.54584
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .Rprofile|LICENSE|README.md|testapps/app.R

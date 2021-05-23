@@ -10,6 +10,7 @@
 library(shiny)
 library(tidyverse)
 library(cfbfastR)
+Sys.setenv(CFBD_API_KEY = "r3iuRSkLeTGBugPmK+4ARytbfFkkxbm/Mvk9nW8bQwKhqmhQK1UvQ8cP7owKHnhC")
 
 lsu2020 <- cfbd_stats_season_advanced(2020, team = "LSU")
 lsu2020player <- cfbd_stats_season_player(2020, team = "LSU")
